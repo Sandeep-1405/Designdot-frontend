@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -55,7 +55,13 @@ const Login = () => {
                             />
                         </div>
 
+                        
+
                         <button type="submit" className="btn btn-primary w-100">Login</button>
+
+                        <p className='text-center mt-3'>Don't have an account <Link to='/register' className='text-decoration-none'>create now</Link></p>
+
+                        
                     </form>
                 </div>
             </div>
