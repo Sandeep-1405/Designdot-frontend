@@ -85,6 +85,8 @@ const Signup = () => {
                         </div>
 
                         <button type="submit" className="btn btn-primary w-100">Signup</button>
+
+                        <p className='text-center mt-3'>Already have an account <Link to='/login' className='text-decoration-none'>Login now</Link></p>
                     </form>
                 </div>
             </div>
