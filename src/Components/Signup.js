@@ -11,11 +11,10 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    // Handle form submission
     const handleSubmit = async(e) => {
         e.preventDefault();
         try{
-            const res = await axios.post(`process.env.REACT_APP_BACKEND_URL/register`,{name,username,email,password});
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`,{name,username,email,password});
             console.log(res)
             alert(res?.data?.message)
             navigate('/login')

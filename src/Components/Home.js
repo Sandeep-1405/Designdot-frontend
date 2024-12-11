@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const res = await axios.get(`process.env.REACT_APP_BACKEND_URL/blogs`, {
+                const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/blogs`, {
                     headers: {
                         'Authorization': `Bearer ${jwt}`,
                     },
@@ -38,7 +38,7 @@ const Home = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                `process.env.REACT_APP_BACKEND_URL/blog`,
+                `${process.env.REACT_APP_BACKEND_URL}/blog`,
                 { title, description },
                 {
                     headers: {
