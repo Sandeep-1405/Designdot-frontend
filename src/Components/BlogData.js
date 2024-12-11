@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import HOC from '../HOC/Hoc';
 
 const BlogData = () => {
     const [blogData, setBlogData] = useState([]);
@@ -29,7 +30,7 @@ const BlogData = () => {
                 blogData.map(blog => (
                     <div key={blog._id} className="card mb-4">
                         <div className="card-body">
-                            <h4>Title:</h4>
+                            <h6>Title:</h6>
                             <p className="card-text">{blog.title}</p>
                             <h6>Description:</h6>
                             <p className="card-text">{blog.description}</p>
@@ -42,4 +43,4 @@ const BlogData = () => {
     );
 };
 
-export default BlogData;
+export default HOC(BlogData);

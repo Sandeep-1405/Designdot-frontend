@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import HOC from '../HOC/Hoc';
 
 const Home = () => {
     const [title, setTitle] = useState('');
@@ -10,10 +11,6 @@ const Home = () => {
     const navigate = useNavigate();
     const jwt = localStorage.getItem('jwt');
     //console.log(jwt)
-
-    if(jwt === null){
-        navigate('/login')
-    }
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -127,4 +124,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HOC(Home);
