@@ -12,7 +12,7 @@ const BlogData = () => {
         const fetchBlog = async () => {
             try {
                 const res = await axios.get(`process.env.REACT_APP_BACKEND_URL/${title}`, { headers: { 'Authorization': `Bearer ${jwt}` } });
-                setBlogData(res.data.blog);
+                setBlogData(res?.data?.blog);
             } catch (error) {
                 console.log(error);
             }

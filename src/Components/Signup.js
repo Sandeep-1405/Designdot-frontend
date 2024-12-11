@@ -17,11 +17,11 @@ const Signup = () => {
         try{
             const res = await axios.post(`process.env.REACT_APP_BACKEND_URL/register`,{name,username,email,password});
             console.log(res)
-            alert(res.data.message)
+            alert(res?.data?.message)
             navigate('/login')
         }catch(error){
             console.log(error)
-            alert(error.message)
+            alert(error?.message)
         }
     };
 
