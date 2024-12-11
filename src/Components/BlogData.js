@@ -17,7 +17,7 @@ const BlogData = () => {
                 console.log(error);
             }
         };
-        fetchBlog();
+        fetchBlog()
     }, [title]);
 
     return (
